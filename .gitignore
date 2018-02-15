@@ -1,0 +1,11 @@
+.idea/
+env
+*.pyc
+__pycache__
+*.egg-info
+.tox
+.coverage
+.coverage.*
+dist/
+build/
+htmlcov/

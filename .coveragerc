@@ -1,0 +1,8 @@
+[paths]
+source=graylog_json_formatter
+
+[run]
+data_file=../.coverage
+
+[html]
+title=GraylogJSONFormatter coverage report

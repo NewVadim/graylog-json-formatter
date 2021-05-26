@@ -21,6 +21,16 @@ configure::
                               'File {pathname}:{lineno}" - {funcName}() | {message}',
                     'style': '{',
                     'source': 'test',
+                    'environment': 'testing',
+                    'keys': {
+                        'name', 'levelno', 'levelname',
+                        'pathname', 'filename', 'module', 'lineno', 'funcName',
+                        'created', 'asctime', 'msecs', 'relativeCreated',
+                        'thread', 'threadName', 'process',
+                        'message', 'data',
+                        'exc_text', 'stack_info',
+                    },
+                    'extra': {'service': 'my-service'},
                 }
             },
             'handlers': {
@@ -54,3 +64,8 @@ logging::
 
 
 Graylog extract extra as ``data-key`` and ``data-int_key`` fields.
+
+``extra`` argument may be callable or string with dotted path to callable attribute::
+
+    'extra': lambda record: {'service': 'service-func'}
+

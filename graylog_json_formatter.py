@@ -78,8 +78,9 @@ class GrayLogJSONFormatter(logging.Formatter):
     def format(self, record):
         record.message = record.getMessage()
 
-        if self.usesTime():
+        if 'asctime' in self.keys:
             record.asctime = self.formatTime(record, self.datefmt)
+
         if self.environment:
             record.environment = self.environment
 
